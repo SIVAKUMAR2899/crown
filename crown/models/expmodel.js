@@ -1,8 +1,8 @@
 const dbconfig = require('../config/dbconfig');
 
 module.exports = (sequelize, DataTypes) => {
-    const Card = sequelize.define('userCard', {
-        UCid: {
+    const exp = sequelize.define('expCount', {
+        id: {
             type: DataTypes.INTEGER,
             autoincrement: true,
             primaryKey: true
@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         user_id: {
             type: DataTypes.INTEGER,
         },
-        card_id: {
+        expCount: {
             type: DataTypes.INTEGER,
         }
     },
@@ -19,6 +19,6 @@ module.exports = (sequelize, DataTypes) => {
     }
 );
 
-return Card
+return exp
 
 };
