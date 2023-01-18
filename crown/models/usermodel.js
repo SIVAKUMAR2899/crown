@@ -11,16 +11,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         email: {
             type: DataTypes.TEXT,
-        },
-        crown_id: {
-            type: DataTypes.INTEGER,
-        },
-        exp_id: {
-            type: DataTypes.INTEGER,
-        },
-        card_id: {
-            type: DataTypes.INTEGER,
-        },
+        }
     },
     {
         timestamps: false
@@ -30,3 +21,5 @@ module.exports = (sequelize, DataTypes) => {
 return Player
 
 };
+
+

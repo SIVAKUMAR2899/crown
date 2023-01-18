@@ -2,6 +2,9 @@ const { users } = require('../models');
 const db = require('../models');
 const { text } = require('body-parser');
 const Player = db.users;
+const Crown = db.crownCounts;
+const Exp = db.expCounts;
+const CardDetail = db.cardDetails;
 
 //1.post method
 
@@ -28,9 +31,9 @@ const addUser = async (req, res) => {
 //2.get all users
 
 const getAllUser = async (req, res) => {
-    const user = "SELECT Player JOIN crownCounts ON Player.user_id = crownCounts.user_id";
-    console.log(user);
-    let users = await Player.findAll({user});
+    let users = await Player.findAll({
+        
+    });
     if(users){
         res.status(200).send(users);
     }else{
@@ -45,7 +48,17 @@ const getAllUser = async (req, res) => {
 
 const getOneUser = async (req, res) => {
     let user_id = req.params.user_id
-    let users = await Player.findOne({ where: { user_id: user_id } });
+    let users = await Player.findOne({ include: [{
+        model: Crown,
+        as: 'crown'
+    },{
+        model: Exp,
+        as: 'exp'
+    },{
+        model: CardDetail,
+        as: 'carddetail'
+    }],
+    where: { user_id: user_id } });
     if(users){
         return res.status(200).json({
             data:users

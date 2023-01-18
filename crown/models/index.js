@@ -44,5 +44,17 @@ db.sequelize.sync({ force: false })
     console.log('yes re-sync done!')
 })
 
+db.users.hasMany(db.crownCounts, {
+    foreignKey: 'user_id',
+    as: 'crown'
+})
+db.users.hasMany(db.expCounts, {
+    foreignKey: 'user_id',
+    as: 'exp'
+})
+db.users.hasMany(db.cardDetails, {
+    foreignKey: 'user_id',
+    as: 'carddetail'
+})
 
 module.exports = db;
