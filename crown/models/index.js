@@ -37,7 +37,6 @@ db.sequelize = sequelize
 db.users = require('./usermodel')(sequelize, DataTypes)
 db.crownCounts = require('./crownmodel')(sequelize, DataTypes)
 db.expCounts = require('./expmodel')(sequelize, DataTypes)
-db.userCards = require('./cardmodel')(sequelize, DataTypes)
 db.cardDetails = require('./carddetailmodel')(sequelize, DataTypes)
 
 db.sequelize.sync({ force: false })

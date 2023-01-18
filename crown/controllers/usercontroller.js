@@ -28,7 +28,9 @@ const addUser = async (req, res) => {
 //2.get all users
 
 const getAllUser = async (req, res) => {
-    let users = await Player.findAll({Player});
+    const user = "SELECT Player JOIN crownCounts ON Player.user_id = crownCounts.user_id";
+    console.log(user);
+    let users = await Player.findAll({user});
     if(users){
         res.status(200).send(users);
     }else{

@@ -6,10 +6,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             primaryKey: true
         },
-        UCid: {
+        user_id: {
             type: DataTypes.INTEGER,
         },
-        user_id: {
+        card_id: {
             type: DataTypes.INTEGER,
         },
         cardExp: {

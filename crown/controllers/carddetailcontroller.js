@@ -21,20 +21,20 @@ const addCarddet = async (req, res) => {
 }
 
 const updateCarddet= async (req, res) => {
-    let user_id = req.body.user_id;
-        const cards = await CardDetail.update(req.body, { where: { user_id: user_id } });
-        if(cards){
-            res.status(200).json({
-            data: cards,
-            code: res.statusCode,
-            message: 'CardDetail update success'
-            });
-        }else{
-            return res.json({
-            status:0,
-            message:"CardDetail update failed"
-            });
-        }
+    let {user_id,card_id }= req.body;
+    const cards = await CardDetail.update(req.body, { where: { user_id: user_id,card_id: card_id } });
+    if(cards){
+        res.status(200).json({
+        data: cards,
+        code: res.statusCode,
+        message: 'CardDetail update success'
+        });
+    }else{
+        return res.json({
+        status:0,
+        message:"CardDetail update failed"
+        });
+    }
 }
 
 

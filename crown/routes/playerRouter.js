@@ -1,7 +1,6 @@
 const Usercontroller = require('../controllers/usercontroller');
 const Crowncontroller = require('../controllers/crowncontroller');
 const Expcontroller = require('../controllers/expcontroller');
-const Cardcontroller = require('../controllers/cardcontroller');
 const Carddetcontroller = require('../controllers/carddetailcontroller');
 
 const router = require('express').Router()
@@ -23,10 +22,6 @@ router.put('/crown/:user_id',Crowncontroller.updateCrown)
 router.post('/addexp',Expcontroller.addExp)
 
 router.put('/exp/:user_id',Expcontroller.updateExp)
-
-router.post('/addcard',Cardcontroller.addCards)
-
-router.post('/card/:updatecard',Cardcontroller.updateCards)
 
 router.post('/addcdet',Carddetcontroller.addCarddet)
 

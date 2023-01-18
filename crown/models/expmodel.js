@@ -1,7 +1,7 @@
 const dbconfig = require('../config/dbconfig');
 
 module.exports = (sequelize, DataTypes) => {
-    const exp = sequelize.define('expCount', {
+    const exp = sequelize.define('expCounts', {
         id: {
             type: DataTypes.INTEGER,
             autoincrement: true,
